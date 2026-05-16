@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  @apply bg-gradient-to-br from-slate-50 to-slate-100;
+}
+
+/* Interactive button styles */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-medium shadow-soft-lg hover:shadow-soft-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white text-primary-600 border-2 border-primary-200 rounded-lg font-medium hover:bg-primary-50 hover:border-primary-300 active:scale-95 transition-all;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-gray-600 rounded-lg font-medium hover:bg-gray-100 active:scale-95 transition-all;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-soft hover:shadow-soft-lg transition-all backdrop-blur-sm;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all;
+  }
+
+  /* Stat card with animation */
+  .stat-card {
+    @apply bg-white rounded-xl p-6 shadow-soft hover:shadow-soft-lg transition-all animate-fade-in hover:scale-105;
+  }
+
+  .stat-label {
+    @apply text-xs font-semibold uppercase tracking-wider opacity-70 mb-2;
+  }
+
+  .stat-value {
+    @apply text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .stat-sublabel {
+    @apply text-sm text-gray-500 mt-2 font-medium;
+  }
+
+  /* Input styles */
+  .input-field {
+    @apply w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-primary-400 focus:ring-4 focus:ring-primary-100 transition-all;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+
+  .badge-error {
+    @apply badge bg-accent-100 text-accent-700;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded hover:bg-gray-500;
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  -100% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #f3f4f6 0%, #e5e7eb 50%, #f3f4f6 100%);
+  background-size: 1000px 100%;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+}
