@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  @apply bg-gradient-to-br from-slate-50 to-slate-100;
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+}
+
+.dark .card,
+.dark .card-elevated,
+.dark .stat-card {
+  background-color: #0f1724 !important;
+  box-shadow: 0 10px 15px -3px rgba(2,6,23,0.6), 0 4px 6px -2px rgba(2,6,23,0.45) !important;
+}
+
+.dark .input-field {
+  @apply border-slate-700 bg-slate-900 text-slate-100 focus:border-primary-400 focus:ring-primary-900;
+}
+
+.dark .badge {
+  @apply bg-slate-800 text-slate-100;
+}
+
+.dark .btn-secondary {
+  @apply bg-slate-800 text-slate-100 border-slate-700 hover:bg-slate-700;
+}
+
+/* Dark-mode overrides for commonly used utility classes to ensure contrast */
+.dark body {
+  color: #e6eef8 !important;
+}
+.dark .bg-white,
+.dark .bg-slate-50,
+.dark .bg-gray-50,
+.dark .bg-gray-100,
+.dark .bg-slate-100,
+.dark .bg-primary-50 {
+  background-color: #0f1724 !important;
+}
+.dark .hover\:bg-gray-50:hover,
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-primary-50:hover {
+  background-color: rgba(148,163,184,0.12) !important;
+}
+.dark .text-gray-500,
+.dark .text-gray-600,
+.dark .text-gray-700,
+.dark .text-slate-500,
+.dark .text-gray-400,
+.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+.dark .text-gray-900,
+.dark .text-slate-900,
+.dark .text-gray-800,
+.dark .text-slate-800 {
+  color: #e6eef8 !important;
+}
+.dark .border-gray-200,
+.dark .border-slate-200,
+.dark .border-gray-300,
+.dark .border-slate-300 {
+  border-color: #1f2937 !important;
+}
+.dark .shadow-soft,
+.dark .shadow-soft-lg,
+.dark .shadow-soft-xl,
+.dark .shadow-sm,
+.dark .shadow-2xl {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+}
+.dark .badge-primary {
+  background-color: rgba(14,165,233,0.14) !important;
+  color: #7dd3fc !important;
+}
+.dark a,
+.dark .text-blue-600,
+.dark .text-blue-700 {
+  color: #7dd3fc !important;
+}
+.dark .btn-primary {
+  background-image: linear-gradient(to right, #075985, #4338ca) !important;
+  color: #f8fafc !important;
+}
+.dark .btn-secondary {
+  background-color: #111827 !important;
+  color: #cbd5e1 !important;
+  border-color: #334155 !important;
+}
+.dark .btn-ghost {
+  color: #cbd5e1 !important;
+}
+.dark .card,
+.dark .card-elevated,
+.dark .stat-card,
+.dark .modal,
+.dark .table-container,
+.dark .text-center {
+  background-color: #0f1724 !important;
+  color: #e6eef8 !important;
+}
+.dark input,
+.dark textarea,
+.dark select,
+.dark .input-field,
+.dark .form-control {
+  background-color: #081124 !important;
+  color: #e6eef8 !important;
+  border-color: #1f2937 !important;
+}
+.dark ::placeholder {
+  color: rgba(230,238,248,0.55) !important;
+}
+.dark table thead {
+  background-color: transparent !important;
+}
+.dark tr:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-gray-100:hover {
+  background-color: rgba(148,163,184,0.08) !important;
+}
+.dark .bg-red-500,
+.dark .bg-green-600,
+.dark .bg-amber-600,
+.dark .bg-blue-600 {
+  color: #f8fafc !important;
+}
+.dark .bg-red-500 { background-color: #b91c1c !important; }
+.dark .bg-green-600 { background-color: #16a34a !important; }
+.dark .bg-amber-600 { background-color: #d97706 !important; }
+.dark .bg-blue-600 { background-color: #0c4a6e !important; }
+
+/* Ensure cards have readable text */
+.dark .card,
+.dark .card-elevated,
+.dark .stat-card {
+  color: #e6eef8 !important;
+}
+
+/* Interactive button styles */
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-medium shadow-soft-lg hover:shadow-soft-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-white text-primary-600 border-2 border-primary-200 rounded-lg font-medium hover:bg-primary-50 hover:border-primary-300 active:scale-95 transition-all;
+  }
+
+  .btn-ghost {
+    @apply px-4 py-2 text-gray-600 rounded-lg font-medium hover:bg-gray-100 active:scale-95 transition-all;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-xl shadow-soft hover:shadow-soft-lg transition-all backdrop-blur-sm;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-xl shadow-soft-lg hover:shadow-soft-xl transition-all;
+  }
+
+  /* Stat card with animation */
+  .stat-card {
+    @apply bg-white rounded-xl p-6 shadow-soft hover:shadow-soft-lg transition-all animate-fade-in hover:scale-105;
+  }
+
+  .stat-label {
+    @apply text-xs font-semibold uppercase tracking-wider opacity-70 mb-2;
+  }
+
+  .stat-value {
+    @apply text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .stat-sublabel {
+    @apply text-sm text-gray-500 mt-2 font-medium;
+  }
+
+  /* Input styles */
+  .input-field {
+    @apply w-full px-4 py-2 border-2 border-gray-200 rounded-lg focus:outline-none focus:border-primary-400 focus:ring-4 focus:ring-primary-100 transition-all;
+  }
+
+  /* Badge styles */
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-amber-100 text-amber-700;
+  }
+
+  .badge-error {
+    @apply badge bg-accent-100 text-accent-700;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded hover:bg-gray-500;
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  -100% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(to right, #f3f4f6 0%, #e5e7eb 50%, #f3f4f6 100%);
+  background-size: 1000px 100%;
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+}
